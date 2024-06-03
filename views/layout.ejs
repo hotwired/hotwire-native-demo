@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="turbo-refresh-method" content="morph">
+    <meta name="turbo-refresh-scroll" content="preserve">
+
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+    <link rel="stylesheet" href="/styles/app.css">
+
+    <% if (locals.native_app) { %>
+      <link rel="stylesheet" href="/styles/native.css">
+      <link rel="stylesheet" href="/styles/bridge.css">
+    <% } %>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@hotwired/turbo": "https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.2/+esm",
+          "@hotwired/stimulus": "https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm",
+          "@hotwired/strada": "https://cdn.jsdelivr.net/npm/@hotwired/strada@1.0.0-beta1/+esm"
+        }
+      }
+    </script>
+
+    <script type="module" src="/application.js"></script>
+  </head>
+  <body class="<%= locals.page_class || "" %>">
+    <main id="content" class="grid pad --bottom-soft">
+      <%- body %>
+    </main>
+  </body>
+</html>
