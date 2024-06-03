@@ -3,6 +3,10 @@ a:visited {
   font-weight: inherit;
 }
 
+.display.--none\@native {
+  display: none;
+}
+
 .page-title:not(.display-native) {
   display: none;
 }
@@ -23,7 +27,8 @@ input[type=text]:focus {
   margin: 0 0 var(--space-m);
   background: var(--color-tint);
   font-size: var(--type-m);
-  color: var(--color-black);
+  font-weight: 500;
+  color: var(--color-white);
   text-align: center;
   text-decoration: none;
   line-height: 1.25;

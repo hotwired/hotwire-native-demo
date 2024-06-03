@@ -26,18 +26,28 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr minmax(80vw, 100%) 1fr;
+  grid-template-columns: [fullbleed-start] 1fr [main-start] minmax(80vw, 100%) [main-end] 1fr [fullbleed-start];
   align-items: start;
   grid-column-gap: min(5vw, 4rem);
   column-gap:min(5vw, 4rem)
 }
 
-.grid > .grid {
-  grid-column:1/-1
+.subgrid {
+  display: grid;
+  grid-template-columns: subgrid;
 }
 
-.grid > :not([class*=grid]) {
-  grid-column:2
+.grid,
+.subgrid {
+  & > .grid,
+  & > .subgrid {
+    grid-column:1/-1
+  }
+
+  & > :not([class*=grid]),
+  & > :not([class*=grid]) {
+    grid-column:2
+  }
 }
 
 .grid.--dense {
@@ -46,19 +56,23 @@
 
 @media (min-width: 45em) {
   .grid {
-      grid-template-columns: 1fr repeat(12, minmax(2rem, 100%)) 1fr;
+      grid-template-columns: [fullbleed-start] 1fr [main-start] repeat(12, minmax(2rem, 100%)) [main-end] 1fr [fullbleed-start];
       grid-column-gap: min(2.5vw, 4rem);
       column-gap:min(2.5vw, 4rem)
   }
 
-  .grid > :not([class*=grid]) {
+  .grid,
+  .subgrid {
+    & > :not([class*=grid]),
+    & > :not([class*=grid]) {
       grid-column:4/span 8
+    }
   }
 }
 
 @media (min-width: 90em) {
   .grid {
-      grid-template-columns: 1fr repeat(12, 7.5rem) 1fr;
+      grid-template-columns: [fullbleed-start] 1fr [main-start] repeat(12, 7.5rem) [main-end] 1fr [fullbleed-start];
       grid-column-gap: 4rem;
       column-gap:4rem
   }
