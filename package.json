@@ -1,7 +1,7 @@
 {
-  "name": "turbo-native-demo",
+  "name": "hotwire-native-demo",
   "version": "0.0.1",
-  "description": "A demo app for Turbo Native apps",
+  "description": "A demo app for Hotwire Native apps",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -15,10 +15,10 @@
     "express-ejs-layouts": "^2.5.1"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "repository": {
-    "url": "https://github.com/basecamp/turbo-native-demo"
+    "url": "https://github.com/hotwired/hotwire-native-demo"
   },
   "license": "MIT",
   "devDependencies": {
