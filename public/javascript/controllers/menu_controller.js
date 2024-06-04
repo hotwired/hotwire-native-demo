@@ -20,6 +20,5 @@ export default class extends Controller {
   itemSelected({ target }) {
     this.hide()
     this.resultTarget.textContent = `${target.textContent} was selected`
-    alert("I got here")
   }
 }
