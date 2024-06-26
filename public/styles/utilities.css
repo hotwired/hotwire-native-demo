@@ -32,14 +32,12 @@
   column-gap:min(5vw, 4rem)
 }
 
-.grid {
-  & > .grid {
-    grid-column:1/-1;
-  }
+.grid > .grid {
+  grid-column:1/-1;
+}
 
-  & > :not([class*=grid]) {
-    grid-column:2;
-  }
+.grid > :not([class*=grid]) {
+  grid-column:2;
 }
 
 .grid.--dense {
