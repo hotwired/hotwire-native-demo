@@ -19,7 +19,7 @@ body:not(.index) .page-title {
 }
 
 @media (min-width: 45em) {
-  .actions {
+  .actions__body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -28,12 +28,20 @@ body:not(.index) .page-title {
 }
 
 @media(max-width: 44.9em) {
+  .actions__body {
+    padding-block: 0.3em;
+    border-radius: 0 0.7em 0.7em 0.7em;
+    background: var(--color-sheet);
+  }
+}
+
+.actions__header {
+  color: var(--color-text-subtle)
+}
+
+@media(max-width: 44.9em) {
   .actions__header {
-    padding-left: 1em;
-    font-size: var(--type-s);
-    font-weight: normal;
-    font-style: normal;
-    color: var(--color-text-subtle)
+    font-size: var(--type-m);
   }
 }
 
@@ -41,8 +49,8 @@ body:not(.index) .page-title {
 .actions__item:visited {
   display: block;
   padding: 0.7em 0.7em 0.7em 3em;
-  background: var(--color-sheet);
   color: var(--color-text);
+  font-weight: 500;
   position: relative;
   text-decoration: initial;
 }
@@ -59,7 +67,7 @@ body:not(.index) .page-title {
     content: "";
     position: absolute;
     top: 0;
-    right: 0;
+    right: 0.7em;
     left: 3em;
     border-top: 0.5px solid var(--color-border);
   }
@@ -82,7 +90,7 @@ body:not(.index) .page-title {
     width: 49%;
     margin-bottom: 2%;
     padding: 1.5em;
-    background-image: none;
+    background: var(--color-sheet);
     border: 0;
     border-radius: 0.5em;
     text-align: center;

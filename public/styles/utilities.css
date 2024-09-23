@@ -33,11 +33,11 @@
 }
 
 .grid > .grid {
-  grid-column:1/-1
+  grid-column:1/-1;
 }
 
 .grid > :not([class*=grid]) {
-  grid-column:2
+  grid-column:2;
 }
 
 .grid.--dense {
@@ -52,7 +52,7 @@
   }
 
   .grid > :not([class*=grid]) {
-      grid-column:4/span 8
+    grid-column:4/span 8
   }
 }
 
