@@ -1,6 +1,6 @@
 # Hotwire Native Demo
 
-A small web app to demonstrate how to use Hotwire with the Hotwire Native frameworks. The demo app is available at [https://turbo-native-demo.glitch.me](https://turbo-native-demo.glitch.me)
+A small web app to demonstrate how to use Hotwire with the Hotwire Native frameworks. The demo app is available at [https://hotwire-native-demo.dev](https://hotwire-native-demo.dev)
 
 ## Running Locally
 
