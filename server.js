@@ -91,22 +91,22 @@ app.post("/new", (request, response) => {
   response.redirect("/success")
 })
 
-app.get("/strada-form", (request, response) => {
-  response.render("strada-form", { title: "Strada" })
+app.get("/bridge-form", (request, response) => {
+  response.render("bridge-form", { title: "Bridge Form" })
 })
 
-app.post("/strada-form", (request, response) => {
+app.post("/bridge-form", (request, response) => {
   setTimeout(() => {
     response.redirect("/success")
   }, 1500)
 })
 
-app.get("/strada-menu", (request, response) => {
-  response.render("strada-menu", { title: "Strada" })
+app.get("/bridge-menu", (request, response) => {
+  response.render("bridge-menu", { title: "Bridge Menu" })
 })
 
-app.get("/strada-overflow", (request, response) => {
-  response.render("strada-overflow", { title: "Strada" })
+app.get("/bridge-overflow", (request, response) => {
+  response.render("bridge-overflow", { title: "Bridge Overflow" })
 })
 
 app.get("/success", (request, response) => {
