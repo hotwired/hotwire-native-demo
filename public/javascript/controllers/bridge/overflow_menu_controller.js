@@ -1,4 +1,4 @@
-import { BridgeComponent } from "@hotwired/strada"
+import { BridgeComponent } from "@hotwired/hotwire-native-demo"
 
 export default class extends BridgeComponent {
   static component = "overflow-menu"

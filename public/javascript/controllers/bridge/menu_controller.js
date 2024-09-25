@@ -1,5 +1,5 @@
-import { BridgeComponent } from "@hotwired/strada"
-import { BridgeElement } from "@hotwired/strada"
+import { BridgeComponent } from "@hotwired/hotwire-native-demo"
+import { BridgeElement } from "@hotwired/hotwire-native-demo"
 
 export default class extends BridgeComponent {
   static component = "menu"
