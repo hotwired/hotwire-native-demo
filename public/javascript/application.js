@@ -1,6 +1,6 @@
 import "@hotwired/turbo"
 import { Application } from "@hotwired/stimulus"
-import "@hotwired/hotwire-native-demo"
+import "@hotwired/hotwire-native-bridge"
 
 // Controllers
 import MenuController from "./controllers/menu_controller.js"
