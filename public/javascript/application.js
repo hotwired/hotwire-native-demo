@@ -4,6 +4,7 @@ import "@hotwired/hotwire-native-bridge"
 
 // Controllers
 import MenuController from "./controllers/menu_controller.js"
+import IframeController from "./controllers/iframe_controller.js"
 
 // Bridge Components
 import BridgeFormController from "./controllers/bridge/form_controller.js"
@@ -15,6 +16,7 @@ window.Stimulus = Application.start()
 
 // Register Controllers
 Stimulus.register("menu", MenuController)
+Stimulus.register("iframe", IframeController)
 
 // Register Bridge Components
 Stimulus.register("bridge--form", BridgeFormController)

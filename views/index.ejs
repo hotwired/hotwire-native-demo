@@ -57,6 +57,10 @@
       <div class="actions__icon --redirect" aria-hidden="true"></div>
       Follow an external redirect
     </a>
+    <a class="actions__item" href="/iframe">
+      <div class="actions__icon --redirect" aria-hidden="true"></div>
+      Load an iframe
+    </a>
     <a class="actions__item" href="/files">
       <div class="actions__icon --files" aria-hidden="true"></div>
       See how files work
@@ -89,3 +93,10 @@
     </a>
   </div>
 </div>
+
+<div data-controller="iframe">
+  <form data-iframe-target="form" target="target-iframe" action="https://csreis.github.io/" style="opacity: 0; width: 0; height: 0;">
+  </form>
+  <iframe data-iframe-target="iframe" title="target-iframe" name="target-iframe" style="background: white; outline: none;">
+  </iframe>
+</div
