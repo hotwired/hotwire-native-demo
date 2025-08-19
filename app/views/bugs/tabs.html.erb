@@ -6,18 +6,20 @@
   <p>This reproduces <%= link_to "GitHub issue #53", "https://github.com/hotwired/hotwire-native-ios/issues/53" %>.</p>
 </div>
 
-<ul class="tabs top-level-container margin-bs-xl">
-  <li class="tabs__item">
-    <%= link_to "First", tabs_bugs_path(tab: "first"), class: "nav-link #{"active" if @tab == "first"}", data: { turbo_action: :replace } %>
-  </li>
-  <li class="tabs__item">
-    <%= link_to "Second", tabs_bugs_path(tab: "second"), class: "nav-link #{"active" if @tab == "second"}", data: { turbo_action: :replace } %>
-  </li>
-  <li class="tabs__item">
-    <%= link_to "Third", tabs_bugs_path(tab: "third"), class: "nav-link #{"active" if @tab == "third"}", data: { turbo_action: :replace } %>
-  </li>
-</ul>
+<turbo-frame id="tabs" data-turbo-action="replace">
+  <ul class="tabs top-level-container margin-bs-xl">
+    <li class="tabs__item">
+      <%= link_to "First", tabs_bugs_path(tab: "first"), class: "nav-link #{"active" if @tab == "first"}" %>
+    </li>
+    <li class="tabs__item">
+      <%= link_to "Second", tabs_bugs_path(tab: "second"), class: "nav-link #{"active" if @tab == "second"}" %>
+    </li>
+    <li class="tabs__item">
+      <%= link_to "Third", tabs_bugs_path(tab: "third"), class: "nav-link #{"active" if @tab == "third"}" %>
+    </li>
+  </ul>
 
-<div class="top-level-container margin-bs-xl">
-  <p class="text-title">Content for the <%= @tab %> tab.</p>
-</div>
+  <div class="top-level-container margin-bs-xl">
+    <p class="text-title">Content for the <%= @tab %> tab.</p>
+  </div>
+</turbo-frame>
