@@ -15,8 +15,15 @@ export default class extends BridgeComponent {
   notifyBridgeToDisplayMenu(event) {
     const title = new BridgeElement(this.titleTarget).title
     const items = this.makeMenuItems(this.itemTargets)
+    const { x, y, width, height } = event.target.getBoundingClientRect()
 
-    this.send("display", { title, items }, message =>  {
+    const payload = {
+      title,
+      items,
+      source: { x, y, width, height }
+    }
+
+    this.send("display", payload, message => {
       const selectedIndex = message.data.selectedIndex
       const selectedItem = new BridgeElement(this.itemTargets[selectedIndex])
 
