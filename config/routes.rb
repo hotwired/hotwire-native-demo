@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :bugs, only: :index do
-    collection do
-      get "http/:status", to: "bugs#http_code", as: :http_code, constraints: { status: /\d+/ }
-    end
+  resources :bugs, only: :index
+
+  namespace :bugs do
+    resources :http_codes, only: :show, path: "http", param: :status
   end
 
   resources :components, only: %i[index new create] do
