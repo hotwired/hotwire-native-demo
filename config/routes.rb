@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :bugs, only: :index do
-    collection do
-      # get :some
-    end
+  resources :bugs, only: :index
+
+  namespace :bugs do
+    resources :http_codes, only: :show, path: "http", param: :status
   end
+
+  resources :http_codes, only: :index
 
   resources :components, only: %i[index new create] do
     collection do
@@ -48,12 +50,14 @@ Rails.application.routes.draw do
   get "/resource", to: "resources#show", as: :resource
 
   resource :session, only: %i[new create destroy]
+  get "/signin", to: "sessions#new"
   get "/protected", to: "sessions#protected"
 
   direct(:docs) { "https://native.hotwired.dev" }
   direct(:book) { "https://pragprog.com/titles/jmnative/hotwire-native-for-rails-developers/" }
   direct(:bridge_components) { "https://native.hotwired.dev/overview/bridge-components" }
 
+  get :native_docs_redirect, to: redirect("https://native.hotwired.dev")
   get :external_redirect, to: redirect("https://37signals.com")
 
   # Defines the root path route ("/")

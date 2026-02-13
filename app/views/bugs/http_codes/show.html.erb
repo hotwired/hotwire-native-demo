@@ -1,0 +1,7 @@
+<% content_for :title, "HTTP #{@status_code}" %>
+
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">HTTP <%= @status_code %></h1>
+  <p><strong>Status:</strong> <%= @status_code %> <%= @status_label %></p>
+  <p>This page intentionally responds with HTTP <%= @status_code %> for iOS error handling tests.</p>
+</div>

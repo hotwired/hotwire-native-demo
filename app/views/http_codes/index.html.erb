@@ -1,0 +1,28 @@
+<% content_for :title, "HTTP Codes" %>
+
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">HTTP Codes</h1>
+  <p>Tap a status code below to trigger a response with that exact HTTP code.</p>
+
+  <h2 class="margin-bs-xl">Client errors (4xx)</h2>
+  <div class="formatted-list formatted-list--top-level">
+    <% @client_error_codes.each do |entry| %>
+      <%= render "navigations/item",
+        path: bugs_http_code_path(status: entry[:code]),
+        icon: "warning-bold",
+        name: entry[:code],
+        description: entry[:label] %>
+    <% end %>
+  </div>
+
+  <h2 class="margin-bs-xl">Server errors (5xx)</h2>
+  <div class="formatted-list formatted-list--top-level">
+    <% @server_error_codes.each do |entry| %>
+      <%= render "navigations/item",
+        path: bugs_http_code_path(status: entry[:code]),
+        icon: "warning-bold",
+        name: entry[:code],
+        description: entry[:label] %>
+    <% end %>
+  </div>
+</div>

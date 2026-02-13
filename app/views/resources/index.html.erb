@@ -18,6 +18,18 @@
       description: "Hotwire Native for Rails Developers by Joe Masilotti." %>
 
     <%= render "navigations/item",
+      path: native_docs_redirect_path,
+      icon: "arrow-square-out-bold",
+      name: "External redirect",
+      description: "Server-side redirect to native.hotwired.dev." %>
+
+    <%= render "navigations/item",
+      path: http_codes_path,
+      icon: "warning-bold",
+      name: "HTTP codes",
+      description: "Test HTTP error responses in the demo app." %>
+
+    <%= render "navigations/item",
       path: long_resources_path,
       icon: "scroll-bold",
       name: "Scroll restoration",
