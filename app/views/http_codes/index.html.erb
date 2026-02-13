@@ -6,23 +6,23 @@
 
   <h2 class="margin-bs-xl">Client errors (4xx)</h2>
   <div class="formatted-list formatted-list--top-level">
-    <% [400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 421, 422, 428, 429, 418].each do |code| %>
+    <% @client_error_codes.each do |entry| %>
       <%= render "navigations/item",
-        path: bugs_http_code_path(status: code),
+        path: bugs_http_code_path(status: entry[:code]),
         icon: "warning-bold",
-        name: code,
-        description: Rack::Utils::HTTP_STATUS_CODES[code] || "Client Error" %>
+        name: entry[:code],
+        description: entry[:label] %>
     <% end %>
   </div>
 
   <h2 class="margin-bs-xl">Server errors (5xx)</h2>
   <div class="formatted-list formatted-list--top-level">
-    <% [500, 501, 502, 503, 504, 505, 520].each do |code| %>
+    <% @server_error_codes.each do |entry| %>
       <%= render "navigations/item",
-        path: bugs_http_code_path(status: code),
+        path: bugs_http_code_path(status: entry[:code]),
         icon: "warning-bold",
-        name: code,
-        description: Rack::Utils::HTTP_STATUS_CODES[code] || "Server Error" %>
+        name: entry[:code],
+        description: entry[:label] %>
     <% end %>
   </div>
 </div>
