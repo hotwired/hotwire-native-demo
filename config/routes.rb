@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get "/resource", to: "resources#show", as: :resource
 
   resource :session, only: %i[new create destroy]
+  get "/signin", to: "sessions#new"
   get "/protected", to: "sessions#protected"
 
   direct(:docs) { "https://native.hotwired.dev" }

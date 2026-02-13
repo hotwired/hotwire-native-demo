@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  def new
+  end
+
   def create
     cookies.encrypted.permanent[:authenticated] = true
     redirect_to protected_path
