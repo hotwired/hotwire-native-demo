@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   direct(:book) { "https://pragprog.com/titles/jmnative/hotwire-native-for-rails-developers/" }
   direct(:bridge_components) { "https://native.hotwired.dev/overview/bridge-components" }
 
+  get :native_docs_redirect, to: redirect("https://native.hotwired.dev")
   get :external_redirect, to: redirect("https://37signals.com")
 
   # Defines the root path route ("/")
