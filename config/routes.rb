@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :http_codes, only: :show, path: "http", param: :status
   end
 
+  resources :http_codes, only: :index
+
   resources :components, only: %i[index new create] do
     collection do
       get :menu
@@ -40,7 +42,6 @@ Rails.application.routes.draw do
 
   resources :resources, only: %i[index new create] do
     collection do
-      get :http_codes
       get :long
       get :scroll
       get :upload
