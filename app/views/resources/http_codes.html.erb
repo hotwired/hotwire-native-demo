@@ -1,0 +1,28 @@
+<% content_for :title, "HTTP Codes" %>
+
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">HTTP Codes</h1>
+  <p>Tap a status code below to trigger a response with that exact HTTP code.</p>
+
+  <h2 class="margin-bs-xl">Client errors (4xx)</h2>
+  <div class="formatted-list formatted-list--top-level">
+    <% [400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 421, 422, 428, 429, 418].each do |code| %>
+      <%= render "navigations/item",
+        path: http_code_bugs_path(status: code),
+        icon: "warning-bold",
+        name: code,
+        description: Rack::Utils::HTTP_STATUS_CODES[code] || "Client Error" %>
+    <% end %>
+  </div>
+
+  <h2 class="margin-bs-xl">Server errors (5xx)</h2>
+  <div class="formatted-list formatted-list--top-level">
+    <% [500, 501, 502, 503, 504, 505, 520].each do |code| %>
+      <%= render "navigations/item",
+        path: http_code_bugs_path(status: code),
+        icon: "warning-bold",
+        name: code,
+        description: Rack::Utils::HTTP_STATUS_CODES[code] || "Server Error" %>
+    <% end %>
+  </div>
+</div>

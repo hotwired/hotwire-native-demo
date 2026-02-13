@@ -32,6 +32,9 @@ class ResourcesController < ApplicationController
   def upload
   end
 
+  def http_codes
+  end
+
   private
 
   def resource_params

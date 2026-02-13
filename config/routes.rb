@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :bugs, only: :index do
     collection do
-      # get :some
     end
   end
 
@@ -40,6 +39,7 @@ Rails.application.routes.draw do
 
   resources :resources, only: %i[index new create] do
     collection do
+      get :http_codes
       get :long
       get :scroll
       get :upload

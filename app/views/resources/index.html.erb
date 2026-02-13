@@ -18,6 +18,12 @@
       description: "Hotwire Native for Rails Developers by Joe Masilotti." %>
 
     <%= render "navigations/item",
+      path: http_codes_resources_path,
+      icon: "warning-bold",
+      name: "HTTP codes",
+      description: "Test HTTP error responses in the demo app." %>
+
+    <%= render "navigations/item",
       path: long_resources_path,
       icon: "scroll-bold",
       name: "Scroll restoration",
